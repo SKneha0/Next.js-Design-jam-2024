@@ -1,0 +1,15 @@
+Test Case ID,Test Case Description,    User logs in successfully,Test Steps,Actual Result,Status, Severity Level,        Remarks
+      TC001,"      Search Functionality 
+     - Valid Item","1. Go to the search bar 
+2. Enter 'Pizza' 3. Click Search",Relevant food items should appear,       As expected,     Passed,        High,      Working
+    TC002,"      Search Functionality 
+      -Invalid Item","1. Go to the search bar 
+2. Enter 'xyz123' 3. Click Search","No results found
+' message should appear",      As expected,     Passed,         Low,       Working
+    TC003,          Add to Cart,"1. Select a food item 
+2. Click 'Add to Cart' 3. Check the cart",Item should appear in the cart,       As expected,    Passed,         High,Button is responsive
+    TC004,         Checkout Process,"1. Go to cart 2. Click 'Checkout'
+ 3. Complete payment","Order confirmation message
+ should be displayed",        As expected,    Passed,          Low,  Slow Payment 
+    TC005,     Mobile Responsiveness,"1. Open site on mobile
+ 2. Browse different pages",Layout should adjust properly,Some elements misaligned,      normal,       Medium,  Needs CSS fixes
