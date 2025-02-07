@@ -1,20 +1,29 @@
-"use client"
-  
+"use client";
 
-import {Productchef} from "@/types/Productchef"
-import Image from "next/image";
-import React, {useState } from "react";
- 
-const Shopes =() => {
-   
-    const [products, setProducts] = useState<Productchef[]> ;
-   
-   
-    return(
-        <div className="max-w-6xl mx-auto px-4  py-8">
+import React, { useState } from "react";
 
-        </div>
-    );
+// Define the Productchef type
+type Productchef = {
+  id: number;
+  name: string;
+  price: number;
 };
 
-export default  Shopes;
+const Shopes = () => {
+  // Correct initialization
+  const [products, setProducts] = useState<Productchef[]>([]);
+
+  // Example usage of setProducts
+  const addProduct = () => {
+    setProducts([...products, { id: 1, name: "New Product", price: 100 }]);
+  };
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      Our Shop
+      <button onClick={addProduct}>Add Product</button>
+    </div>
+  );
+};
+
+export default Shopes;
