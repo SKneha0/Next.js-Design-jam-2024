@@ -15,20 +15,24 @@ interface Product {
     };
   };
 }
-const page = async () => {
-  const products: Product[] = await client.fetch(`*[_type == 'food']`)
+
+const Page = async () => {
+  const products: Product[] = await client.fetch(`*[_type == 'food']`);
+
   return (
     <div>
-      {products.map((item: Product) => (
+      {products.map((item) => (
         <div key={item._id}>
           <div className="relative">
-            <Image
-              src={urlFor(item.image).url()}
-              width={312}
-              height={267}
-              alt={item.name}
-              className="h-[267px] w-[312px] object-cover"
-            />
+            {item.image?.asset && (
+              <Image
+                src={urlFor(item.image).url()}
+                width={312}
+                height={267}
+                alt={item.name}
+                className="h-[267px] w-[312px] object-cover"
+              />
+            )}
           </div>
           <div className="p-4">
             <h3 className="text-lg font-semibold text-gray-800 mb-2">
@@ -42,7 +46,8 @@ const page = async () => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Page;
+
